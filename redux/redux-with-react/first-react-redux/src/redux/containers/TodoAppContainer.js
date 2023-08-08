@@ -3,7 +3,7 @@ import {
   addTodoActionCreator,
   removeTodoActionCreator,
   removeAllActionCreator,
-} from "../actions";
+} from "../ducks/todoDuck";
 import TodoApp from "../../components/TodoApp";
 
 function mapStateToProps(state, ownProps) {
