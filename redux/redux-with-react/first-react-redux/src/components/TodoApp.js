@@ -1,8 +1,15 @@
 import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  addTodo as addTodoActionCreator,
+  removeTodo as removeTodoActionCreator,
+  removeAll as removeAllActionCreator,
+} from "../redux/slices/todoSlice";
 
 function TodoApp(props) {
-  const { todoItems, addTodo, removeTodo, removeAll } = props;
   const [newTodo, setNewTodo] = useState("");
+  const todoItems = useSelector((state) => state.todo);
+  const dispatch = useDispatch();
 
   return (
     <div>
@@ -17,14 +24,18 @@ function TodoApp(props) {
         <input value={newTodo} onChange={(e) => setNewTodo(e.target.value)} />
         <button
           onClick={() => {
-            addTodo(newTodo);
+            dispatch(addTodoActionCreator(newTodo));
             setNewTodo("");
           }}
         >
           할 일 추가
         </button>
-        <button onClick={removeTodo}>할 일 삭제</button>
-        <button onClick={removeAll}>모두 삭제</button>
+        <button onClick={() => dispatch(removeTodoActionCreator())}>
+          할 일 삭제
+        </button>
+        <button onClick={() => dispatch(removeAllActionCreator())}>
+          모두 삭제
+        </button>
       </div>
     </div>
   );
