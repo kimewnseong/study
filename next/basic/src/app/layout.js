@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import "./globals.css";
+import { Control } from './Control';
 
 export const metadata = {
   title: "Next Practice",
@@ -25,13 +26,11 @@ export default async function RootLayout({ children }) {
             }
           </ol>
           {children}
-          <ul>
-            <li><Link href="/create">create</Link></li>
-            <li><Link href="/update/1">update</Link></li>
-            <li><button>delete</button></li>
-          </ul>
+          <Control />
         </div>
       </body>
     </html>
   );
 }
+
+

@@ -1,16 +1,5 @@
 {
-  "topics": [
-    {
-      "id": 1,
-      "title": "Topic 1",
-      "body": "Topic 1 body"
-    },
-    {
-      "id": 2,
-      "title": "Topic 2",
-      "body": "Topic 2 body"
-    }
-  ],
+  "topics": [],
   "posts": [
     {
       "id": 1,
